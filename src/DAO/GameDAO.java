@@ -67,11 +67,11 @@ public class GameDAO {
 		StringBuffer sql = new StringBuffer();
 		
 		// 게임1(수학 연산 게임)의 총 합산 점수와 게임2(Hangman 게임)의 총 합산 점수를 더한 값과 ID를 출력하는 Query문
-		sql.append("SELECT m.id, SUM(ms.score1) + SUM(ms.score2) sum_game \n");
-		sql.append("FROM member m, member_score ms 						  \n");
-		sql.append("WHERE m.id = ms.id 									  \n");
-		sql.append("GROUP BY ms.id 										  \n");
-		sql.append("ORDER BY sum_game DESC									");
+		sql.append("SELECT m.id, (AVG(ms.score1) + AVG(ms.score2)) / 2 avg_game \n");
+		sql.append("FROM member m, member_score ms 								\n");
+		sql.append("WHERE m.id = ms.id 											\n");
+		sql.append("GROUP BY ms.id 										  		\n");
+		sql.append("ORDER BY avg_game DESC 										  ");
 		
 		pstmt = con.prepareStatement(sql.toString());
 		
@@ -79,7 +79,7 @@ public class GameDAO {
 		
 		while(rs.next()) { // list에서 데이터를 한 줄씩 꺼냄
 			String id = rs.getString("id");
-			int sum = rs.getInt("sum_game");
+			int sum = rs.getInt("avg_game");
 			
 			GameVO vo = new GameVO(id, sum);
 			

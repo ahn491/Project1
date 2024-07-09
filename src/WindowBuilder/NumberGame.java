@@ -60,12 +60,12 @@ public class NumberGame extends JFrame {
       setContentPane(contentPane);
       contentPane.setLayout(null);
       
-      JLabel lblNewLabel_1 = new JLabel("정답 갯수");
-      lblNewLabel_1.setForeground(new Color(255, 255, 255));
-      lblNewLabel_1.setFont(new Font("맑은 고딕", Font.BOLD, 18));
-      lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-      lblNewLabel_1.setBounds(112, 420, 113, 27);
-      contentPane.add(lblNewLabel_1);
+      JLabel answer_cnt_label = new JLabel("정답 갯수");
+      answer_cnt_label.setForeground(new Color(255, 255, 255));
+      answer_cnt_label.setFont(new Font("맑은 고딕", Font.BOLD, 18));
+      answer_cnt_label.setHorizontalAlignment(SwingConstants.CENTER);
+      answer_cnt_label.setBounds(112, 420, 113, 27);
+      contentPane.add(answer_cnt_label);
       
       JLabel QuizRandomLabel = new JLabel("QuizLabel"); // 연산 문제가 표시되는 Label
       QuizRandomLabel.setFont(new Font("굴림", Font.BOLD, 30));
@@ -111,7 +111,7 @@ public class NumberGame extends JFrame {
       JButton btn_answer_check = new JButton(""); // 정답 확인 버튼
       btn_answer_check.setHorizontalAlignment(SwingConstants.LEADING);
       
-      btn_answer_check.setBorderPainted(false); // 버튼 테두리 설정
+      btn_answer_check.setBorderPainted(true); // 버튼 테두리 설정
       btn_answer_check.setContentAreaFilled(false); // 버튼 영역 배경 표시 설정
       btn_answer_check.setFocusPainted(false); // 포커스 표시 설정
       
@@ -159,7 +159,7 @@ public class NumberGame extends JFrame {
       
       nextQuiz = new JButton("");
       
-      nextQuiz.setBorderPainted(false); 
+      nextQuiz.setBorderPainted(true); 
       nextQuiz.setContentAreaFilled(false); 
       nextQuiz.setFocusPainted(false);
       
@@ -238,9 +238,9 @@ public class NumberGame extends JFrame {
          btn_input_score.setBounds(383, 533, 150, 46);
          contentPane.add(btn_input_score);
          
-         JLabel lblNewLabel = new JLabel("");
-         lblNewLabel.setIcon(new ImageIcon(NumberGame.class.getResource("/Image/NumberGame1.png")));
-         lblNewLabel.setBounds(0, 0, 614, 746);
-         contentPane.add(lblNewLabel);
+         JLabel image_label = new JLabel("");
+         image_label.setIcon(new ImageIcon(NumberGame.class.getResource("/Image/NumberGame1.png")));
+         image_label.setBounds(0, 0, 614, 746);
+         contentPane.add(image_label);
       }
    }

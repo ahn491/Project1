@@ -27,7 +27,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class memoMain extends JFrame {
 	private JPanel contentPane;
-	private JTextArea textArea;
+	private JTextArea input_textarea;
 	private File currentFile;
 	private Font defaultFont;
 	Main_Page main = new Main_Page();
@@ -45,76 +45,76 @@ public class memoMain extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnNewMenu = new JMenu("\uD30C\uC77C");
-		mnNewMenu.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		mnNewMenu.setHorizontalAlignment(SwingConstants.CENTER);
-		menuBar.add(mnNewMenu);
+		JMenu file_menu = new JMenu("\uD30C\uC77C");
+		file_menu.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		file_menu.setHorizontalAlignment(SwingConstants.CENTER);
+		menuBar.add(file_menu);
 		
 		// 메뉴 -> 새로만들기 초기화면
-		JMenuItem 새로만들기 = new JMenuItem("\uC591\uC2DD\uCD08\uAE30\uD654");
-		새로만들기.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		새로만들기.setHorizontalAlignment(SwingConstants.LEFT);
-		새로만들기.addActionListener(new ActionListener() {
+		JMenuItem init_menuitem = new JMenuItem("\uC591\uC2DD\uCD08\uAE30\uD654");
+		init_menuitem.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		init_menuitem.setHorizontalAlignment(SwingConstants.LEFT);
+		init_menuitem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.setText("\u25CE \uD574\uC57C \uD560 \uC77C\r\n-\r\n-\r\n-\r\n-\r\n-\r\n\r\n\u25CE \uC0AC\uC57C \uD560 \uAC83\r\n-\r\n-\r\n-\r\n-\r\n-\r\n\r\n\u25CE \uAE30\uC5B5\uD574\uC57C \uD560 \uAC83\r\r\n-\r\n-\r\n-\r\n-\r\n-\r\n");
+				input_textarea.setText("\u25CE \uD574\uC57C \uD560 \uC77C\n-\n-\n-\n-\n-\n\n\u25CE \uC0AC\uC57C \uD560 \uAC83\n-\n-\n-\n-\n-\n\n\u25CE \uAE30\uC5B5\uD574\uC57C \uD560 \uAC83\n-\n-\n-\n-\n-\n");
 				
 				currentFile = null;
 			}
 		});
 		
-		mnNewMenu.add(새로만들기);
+		file_menu.add(init_menuitem);
 		
 		// 텍스트 파일 오픈	
-		JMenuItem 열기 = new JMenuItem("\uD30C\uC77C\uC5F4\uAE30");
-		열기.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		열기.addActionListener(new ActionListener() {
+		JMenuItem open_menuitem = new JMenuItem("\uD30C\uC77C\uC5F4\uAE30");
+		open_menuitem.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		open_menuitem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				openFile();
 			}
 		});
 		
 		// 화면 지우기		
-		JMenuItem 빈화면 = new JMenuItem("\uD654\uBA74 \uC9C0\uC6B0\uAE30");
-		빈화면.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		빈화면.addActionListener(new ActionListener() {
+		JMenuItem clear_menuitem = new JMenuItem("\uD654\uBA74 \uC9C0\uC6B0\uAE30");
+		clear_menuitem.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		clear_menuitem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.setText("");
+				input_textarea.setText("");
 				currentFile = null;
 				
 			}
 		});
 		
-		mnNewMenu.add(빈화면);
-		mnNewMenu.add(열기);
+		file_menu.add(clear_menuitem);
+		file_menu.add(open_menuitem);
 		
 		// 텍스트 파일로 저장		
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("\uD30C\uC77C\uC800\uC7A5");
-		mntmNewMenuItem_1.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+		JMenuItem save_menuitem = new JMenuItem("\uD30C\uC77C\uC800\uC7A5");
+		save_menuitem.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		save_menuitem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				saveAsFile();
 			}
 		});
 		
-		mnNewMenu.add(mntmNewMenuItem_1);
+		file_menu.add(save_menuitem);
 		
-		JMenu mnNewMenu_1 = new JMenu("\uC11C\uC2DD");
-		mnNewMenu_1.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		menuBar.add(mnNewMenu_1);
+		JMenu edit_menu = new JMenu("\uC11C\uC2DD");
+		edit_menu.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		menuBar.add(edit_menu);
 		
 		// 글꼴		
-		JMenuItem 글꼴 = new JMenuItem("\uAE00\uAF34\uD06C\uAE30");
-		글꼴.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		글꼴.addActionListener(new ActionListener() {
+		JMenuItem font_size_menuitem = new JMenuItem("\uAE00\uAF34\uD06C\uAE30");
+		font_size_menuitem.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		font_size_menuitem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
                 String fontSizeStr = JOptionPane.showInputDialog(memoMain.this, "Font 크기를 입력하세요:\n현재 크기는 12입니다", "Font 크기 선택 ", JOptionPane.PLAIN_MESSAGE);
                 try {
                     int fontSize = Integer.parseInt(fontSizeStr);
                     
                     if (fontSize > 0) {
-                        Font currentFont = textArea.getFont();
+                        Font currentFont = input_textarea.getFont();
                         Font newFont = currentFont.deriveFont((float) fontSize);
-                        textArea.setFont(newFont);
+                        input_textarea.setFont(newFont);
                     } else {
                         JOptionPane.showMessageDialog(memoMain.this, "올바른 글꼴 크기를 입력하세요.", "오류", JOptionPane.ERROR_MESSAGE);
                     }
@@ -124,28 +124,28 @@ public class memoMain extends JFrame {
             }
 		});
 		
-		글꼴.setHorizontalAlignment(SwingConstants.LEFT);
-		mnNewMenu_1.add(글꼴);
+		font_size_menuitem.setHorizontalAlignment(SwingConstants.LEFT);
+		edit_menu.add(font_size_menuitem);
 		
 		// 글꼴 초기화		
-		JMenuItem 글꼴초기화 = new JMenuItem("\uAE00\uAF34\uCD08\uAE30\uD654");
-		글꼴초기화.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		글꼴초기화.addActionListener(new ActionListener() {
+		JMenuItem font_init_menuitem = new JMenuItem("\uAE00\uAF34\uCD08\uAE30\uD654");
+		font_init_menuitem.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		font_init_menuitem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.setFont(defaultFont);
+				input_textarea.setFont(defaultFont);
 			}
 		});
 		
-		mnNewMenu_1.add(글꼴초기화);
+		edit_menu.add(font_init_menuitem);
 		
-		JMenu mnNewMenu_2 = new JMenu("\uCC3D");
-		mnNewMenu_2.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		menuBar.add(mnNewMenu_2);
+		JMenu window_menu = new JMenu("\uCC3D");
+		window_menu.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		menuBar.add(window_menu);
 		
 		// 메인 화면 돌아가기		
-		JMenuItem mntmNewMenuItem = new JMenuItem("\uBA54\uC778\uC73C\uB85C \uB3CC\uC544\uAC00\uAE30");
-		mntmNewMenuItem.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		mntmNewMenuItem.addActionListener(new ActionListener() {
+		JMenuItem return_main_menuitem = new JMenuItem("\uBA54\uC778\uC73C\uB85C \uB3CC\uC544\uAC00\uAE30");
+		return_main_menuitem.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		return_main_menuitem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				main.welcome_label.setText(id + "님 환영합니다!");
 				
@@ -159,27 +159,27 @@ public class memoMain extends JFrame {
 			}
 		});
 		
-		mnNewMenu_2.add(mntmNewMenuItem);
+		window_menu.add(return_main_menuitem);
 	
 		// 종료		
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("\uC885\uB8CC");
-		mntmNewMenuItem_2.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		mntmNewMenuItem_2.addActionListener(new ActionListener() {
+		JMenuItem exit_menuitem = new JMenuItem("\uC885\uB8CC");
+		exit_menuitem.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		exit_menuitem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
 		
-		mnNewMenu_2.add(mntmNewMenuItem_2);
+		window_menu.add(exit_menuitem);
 		
-		JMenu Help = new JMenu("Help");
-		Help.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		menuBar.add(Help);
+		JMenu help_menu = new JMenu("Help");
+		help_menu.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		menuBar.add(help_menu);
 		
 		// tip		
-		JMenuItem 도움말 = new JMenuItem("\uB3C4\uC6C0\uB9D0");
-		도움말.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		도움말.addActionListener(new ActionListener() {
+		JMenuItem help_menuitem = new JMenuItem("\uB3C4\uC6C0\uB9D0");
+		help_menuitem.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
+		help_menuitem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(memoMain.this, 
 						"이 프로그램은 발달장애인의 일상 생활을 더욱 편리하게 하기 위해 제작된 메모장입니다.\n "
@@ -188,7 +188,7 @@ public class memoMain extends JFrame {
 			}
 		});
 		
-		Help.add(도움말);
+		help_menu.add(help_menuitem);
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -200,11 +200,11 @@ public class memoMain extends JFrame {
 		contentPane.add(desktopPane, BorderLayout.CENTER);
 		
 		// 초기 양식 화면		
-		textArea = new JTextArea();
+		input_textarea = new JTextArea();
 		
-		textArea.setText("\u25CE \uD574\uC57C \uD560 \uC77C\r\n-\r\n-\r\n-\r\n-\r\n-\r\n\r\n\u25CE \uC0AC\uC57C \uD560 \uAC83\r\n-\r\n-\r\n-\r\n-\r\n-\r\n\r\n\u25CE \uAE30\uC5B5\uD574\uC57C \uD560 \uAC83\r\r\n-\r\n-\r\n-\r\n-\r\n-\r\n");
+		input_textarea.setText("\u25CE \uD574\uC57C \uD560 \uC77C\n-\n-\n-\n-\n-\n\n\u25CE \uC0AC\uC57C \uD560 \uAC83\n-\n-\n-\n-\n-\n\n\u25CE \uAE30\uC5B5\uD574\uC57C \uD560 \uAC83\n-\n-\n-\n-\n-\n");
 		
-		JScrollPane scrollPane = new JScrollPane(textArea);
+		JScrollPane scrollPane = new JScrollPane(input_textarea);
 		desktopPane.add(scrollPane);
 		scrollPane.setBounds(0, 0, 413, 432);
 	}
@@ -216,7 +216,7 @@ public class memoMain extends JFrame {
 		if(result == JFileChooser.APPROVE_OPTION) {
 			currentFile = fileChooser.getSelectedFile();
 			try(BufferedReader reader = new BufferedReader(new FileReader(currentFile))) {
-				textArea.read(reader, null);
+				input_textarea.read(reader, null);
 			} catch(IOException e) {
 				
 			}
@@ -227,7 +227,7 @@ public class memoMain extends JFrame {
 	protected void saveFile() {
 		if (currentFile != null) {
 			try (FileWriter writer = new FileWriter(currentFile)) {
-				textArea.write(writer);
+				input_textarea.write(writer);
 			} catch(IOException e) {
 				JOptionPane.showMessageDialog(this, "파일을 저장하는 동안 오류가 발생했습니다.", "오류", JOptionPane.ERROR_MESSAGE);
 			}

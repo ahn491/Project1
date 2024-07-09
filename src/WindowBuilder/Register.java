@@ -52,14 +52,14 @@ public class Register extends JFrame {
 		
 		addr_textField = new JTextField(); // 주소 입력 TextField
 		addr_textField.setBorder(BorderFactory.createEmptyBorder());
-		addr_textField.setFont(new Font("굴림", Font.BOLD, 20));
+		addr_textField.setFont(new Font("돋움체", Font.BOLD, 20));
 		addr_textField.setColumns(10);
 		addr_textField.setBounds(142, 530, 236, 33);
 		contentPane.add(addr_textField);
 		
 		tel_textField = new JTextField(); // 전화번호 입력 TextField
 		tel_textField.setBorder(BorderFactory.createEmptyBorder());
-		tel_textField.setFont(new Font("굴림", Font.BOLD, 20));
+		tel_textField.setFont(new Font("돋움체", Font.BOLD, 20));
 		tel_textField.setColumns(10);
 		tel_textField.setBounds(142, 479, 236, 33);
 		contentPane.add(tel_textField);
@@ -74,21 +74,21 @@ public class Register extends JFrame {
 		
 		age_textField = new JTextField(); // 나이 입력 TextField
 		age_textField.setBorder(BorderFactory.createEmptyBorder());
-		age_textField.setFont(new Font("굴림", Font.BOLD, 20));
+		age_textField.setFont(new Font("돋움체", Font.BOLD, 20));
 		age_textField.setColumns(10);
 		age_textField.setBounds(142, 377, 236, 33);
 		contentPane.add(age_textField);
 		
 		name_textField = new JTextField(); // 이름 입력 TextField
 		name_textField.setBorder(BorderFactory.createEmptyBorder());
-		name_textField.setFont(new Font("굴림", Font.BOLD, 20));
+		name_textField.setFont(new Font("돋움체", Font.BOLD, 20));
 		name_textField.setColumns(10);
 		name_textField.setBounds(142, 326, 236, 41);
 		contentPane.add(name_textField);
 		
 		pw_passwordField = new JPasswordField(); // 비밀번호 입력 Field(비밀번호를 보이지 않도록 하기 위해 PasswordField를 사용)
 		pw_passwordField.setBorder(BorderFactory.createEmptyBorder());
-		pw_passwordField.setFont(new Font("굴림", Font.BOLD, 20));
+		pw_passwordField.setFont(new Font("돋움체", Font.BOLD, 20));
 		pw_passwordField.setBounds(142, 244, 209, 41);
 		contentPane.add(pw_passwordField);
 		
@@ -112,8 +112,8 @@ public class Register extends JFrame {
 		
 		id_textField = new JTextField();
 		id_textField.setBorder(BorderFactory.createEmptyBorder());
-		id_textField.setFont(new Font("굴림", Font.BOLD, 20));
-		id_textField.setBounds(142, 193, 236, 41);
+		id_textField.setFont(new Font("돋움체", Font.BOLD, 20));
+		id_textField.setBounds(142, 193, 257, 41);
 		contentPane.add(id_textField);
 		id_textField.setColumns(10);
 		btn_register.addMouseListener(new MouseAdapter() {
@@ -175,9 +175,9 @@ public class Register extends JFrame {
 			}
 		});
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\Register1.png"));
-		lblNewLabel_1.setBounds(0, 0, 598, 741);
-		contentPane.add(lblNewLabel_1);
+		JLabel image_label = new JLabel("");
+		image_label.setIcon(new ImageIcon(Register.class.getResource("/Image/Register1.png")));
+		image_label.setBounds(0, 0, 598, 741);
+		contentPane.add(image_label);
 	}
 }

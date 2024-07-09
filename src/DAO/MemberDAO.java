@@ -35,9 +35,7 @@ public class MemberDAO { // DB Query 수행 Class
 		} catch(SQLException e) {
 			System.out.println("Login Error!");
 		}
-		
-		System.out.println(id1);
-		
+				
 		return id1;
 	}
 	

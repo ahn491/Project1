@@ -23,7 +23,7 @@ public class gamepage extends JFrame {
 	private JLabel lblsolutionmsg;
 	private JLabel lblmsg;
 	private JLabel lbl_picture;
-	private JLabel lblNewLabel;
+	private JLabel question_label;
 	private JLabel Label_try;
 	private JTextField textField_oneletter;
 	private String enteredLetter = ""; // 입력된 글자를 저장할 변수
@@ -106,13 +106,14 @@ public class gamepage extends JFrame {
 		textField_oneletter.setOpaque(false);
 		panel.add(textField_oneletter);
 		
-		lblNewLabel = new JLabel("\u25BC \uBE48\uCE78\uC758 \uB2E8\uC5B4\uB97C \uB9DE\uCDB0\uBCF4\uC138\uC694 \u25BC");
-		lblNewLabel.setFont(new Font("맑은 고딕", Font.BOLD, 35));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(36, 10, 586, 47);
-		panel.add(lblNewLabel);
+		question_label = new JLabel("\u25BC \uBE48\uCE78\uC758 \uB2E8\uC5B4\uB97C \uB9DE\uCDB0\uBCF4\uC138\uC694 \u25BC");
+		question_label.setFont(new Font("맑은 고딕", Font.BOLD, 35));
+		question_label.setHorizontalAlignment(SwingConstants.CENTER);
+		question_label.setBounds(36, 10, 586, 47);
+		panel.add(question_label);
 		
 		Label_try = new JLabel("");
+		Label_try.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_try.setFont(new Font("맑은 고딕", Font.BOLD, 25));
 		Label_try.setBounds(633, 519, 65, 45);
 		panel.add(Label_try);
@@ -120,7 +121,7 @@ public class gamepage extends JFrame {
 		lblmsg = new JLabel("");
 		lblmsg.setFont(new Font("Ink Free", Font.BOLD, 30));
 		lblmsg.setHorizontalAlignment(SwingConstants.CENTER);
-		lblmsg.setBounds(451, 196, 204, 39);
+		lblmsg.setBounds(554, 199, 204, 62);
 		panel.add(lblmsg);
 		
 		lblSOL = new JLabel();
@@ -138,15 +139,15 @@ public class gamepage extends JFrame {
         lblSOL.setText(underscores.toString().trim());
         
         lblgameover = new JLabel("");
-        lblgameover.setFont(new Font("Ink Free", Font.BOLD, 25));
+        lblgameover.setFont(new Font("Ink Free", Font.BOLD, 30));
         lblgameover.setHorizontalAlignment(SwingConstants.CENTER);
-        lblgameover.setBounds(451, 196, 204, 39);
+        lblgameover.setBounds(544, 199, 204, 62);
         panel.add(lblgameover);
         
         lblsolutionmsg = new JLabel("");
-        lblsolutionmsg.setFont(new Font("Ink Free", Font.BOLD, 20));
+        lblsolutionmsg.setFont(new Font("Ink Free", Font.BOLD, 25));
         lblsolutionmsg.setHorizontalAlignment(SwingConstants.CENTER);
-        lblsolutionmsg.setBounds(451, 248, 204, 74);
+        lblsolutionmsg.setBounds(554, 258, 204, 74);
         panel.add(lblsolutionmsg);
         
         lbl_picture = new JLabel(""); // 이미지가 표시되는 Label

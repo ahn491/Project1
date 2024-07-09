@@ -85,8 +85,9 @@ public class Today_Headline extends JFrame {
 		contentPane.add(back_btn);
 		
 		JTextPane main_news_textpane = new JTextPane(); // 주요 뉴스 표시하는 textpane
+		main_news_textpane.setEditable(false);
 		main_news_textpane.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		main_news_textpane.setBounds(31, 215, 530, 497);
+		main_news_textpane.setBounds(31, 215, 538, 497);
 		main_news_textpane.setText("* 정부, 중소기업 경쟁력 강화를 위한 새로운 지원책 발표 *\r\n\r\n정부는 중소기업의 경쟁력을 강화하고 경제 회복을 지원하기 위해 새로운 지원책을 발표했습니다. 이번 지원책은 세금 감면, 금융 지원, 기술 혁신 지원 등을 포함하고 있습니다.\r\n\r\r\n* 대학생 연구팀, AI 알고리즘 혁신으로 데이터 분석 정확도 대폭 향상 *\r\n\r\n한 대학 연구팀이 AI를 활용한 새로운 알고리즘을 개발하여 데이터 분석의 정확성을 크게 향상시켰습니다. 이 연구는 앞으로 다양한 산업 분야에서 큰 파급 효과를 미칠 것으로 기대됩니다.\r\n\r\r\n* 국제 유가 급등, 경제 전문가 인플레이션 및 경기 둔화 우려 *\r\n\r\n최근 국제 유가가 급등하면서 경제 전문가들은 인플레이션과 경기 둔화에 대한 우려를 표명하고 있습니다. 정부는 이에 대응하기 위해 에너지 정책을 재검토 중입니다.\r\n\r\r\n* 국회, 환경 보호 강화를 위한 새로운 법안 통과 *\r\n\r\n국회는 환경 보호를 강화하기 위한 새로운 법안을 통과시켰습니다. 이 법안은 탄소 배출을 줄이고 재생 에너지 사용을 촉진하기 위한 여러 가지 조치를 포함하고 있습니다.\r\n\r\r\n* 글로벌 IT 기업, 혁신적인 기능의 최신 스마트폰 출시로 소비자 관심 집중 *\r\n\r\n한 글로벌 IT 기업이 최신 스마트폰을 출시했습니다. 이 스마트폰은 혁신적인 기능과 디자인으로 소비자들의 큰 관심을 받고 있으며, 사전 예약 판매가 폭주하고 있습니다.\r\n\r\n\r\r\n");		contentPane.add(main_news_textpane);
 		
 		JButton stop_btn = new JButton(""); // 뉴스 중지 버튼
@@ -106,9 +107,10 @@ public class Today_Headline extends JFrame {
 		contentPane.add(stop_btn);
 		
 		JTextPane textPane = new JTextPane();
+		textPane.setEditable(false);
 		textPane.setFont(new Font("맑은 고딕", Font.BOLD, 20));
 		textPane.setText("\" \uC815\uBD80 \uC9C0\uC6D0\uCC45 \uBC1C\uD45C\uBD80\uD130 AI \uD601\uC2E0\uC131\uACFC, \uAD6D\uC81C \uC720\uAC00 \uC0C1\uC2B9\uACFC \r\n  \uD658\uACBD \uBCF4\uD638\uBC95\uC548, \uCD5C\uC2E0 \uC2A4\uB9C8\uD2B8\uD3F0 \uCD9C\uC2DC\uAE4C\uC9C0 \"");
-		textPane.setBounds(31, 97, 530, 60);
+		textPane.setBounds(31, 97, 538, 60);
 		contentPane.add(textPane);
 		
 		JLabel titleimg = new JLabel("New label");

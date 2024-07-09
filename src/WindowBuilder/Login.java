@@ -66,9 +66,11 @@ public class Login extends JFrame {
 		setContentPane(contentPane);
 		
 		IDtextField = new JTextField(); // ID 입력 Field
-		IDtextField.setBounds(165, 444, 222, 34);
+		IDtextField.setFont(new Font("굴림", Font.PLAIN, 20));
+		IDtextField.setBounds(165, 444, 299, 34);
 		IDtextField.setColumns(10);
 		IDtextField.setBorder(BorderFactory.createEmptyBorder()); // 테두리 x
+		IDtextField.setOpaque(false);
 		contentPane.add(IDtextField);
 		
 		JButton LoginButton = new JButton(""); // 로그인 버튼
@@ -119,15 +121,15 @@ public class Login extends JFrame {
 		LoginButton.setBackground(SystemColor.activeCaption);
 		LoginButton.setForeground(Color.WHITE);
 		LoginButton.setFont(new Font("Arial", Font.BOLD, 20));
-		LoginButton.setBounds(197, 568, 156, 43);
+		LoginButton.setBounds(241, 568, 87, 43);
 		contentPane.add(LoginButton);
 		
-		JButton MemButton = new JButton(""); // 회원가입 버튼
-		MemButton.setBorderPainted(false); 
-		MemButton.setContentAreaFilled(false); 
-		MemButton.setFocusPainted(false); 
+		JButton register_btn = new JButton(""); // 회원가입 버튼
+		register_btn.setBorderPainted(false); 
+		register_btn.setContentAreaFilled(false); 
+		register_btn.setFocusPainted(false); 
 		
-		MemButton.addMouseListener(new MouseAdapter() {
+		register_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) { // 버튼 클릭 이벤트
 				dispose();
@@ -141,20 +143,22 @@ public class Login extends JFrame {
 			}
 		});
 		
-		MemButton.setBackground(SystemColor.activeCaption);
-		MemButton.setFont(new Font("Arial", Font.BOLD, 20));
-		MemButton.setForeground(Color.WHITE);
-		MemButton.setBounds(323, 626, 156, 43);
-		contentPane.add(MemButton);
+		register_btn.setBackground(SystemColor.activeCaption);
+		register_btn.setFont(new Font("Arial", Font.BOLD, 20));
+		register_btn.setForeground(Color.WHITE);
+		register_btn.setBounds(323, 626, 99, 43);
+		contentPane.add(register_btn);
 		
 		pwField = new JPasswordField(); // Password 입력 Field
+		pwField.setOpaque(false);
+		pwField.setFont(new Font("굴림", Font.PLAIN, 20));
 		pwField.setBorder(BorderFactory.createEmptyBorder());
-		pwField.setBounds(165, 505, 222, 34);
+		pwField.setBounds(165, 510, 299, 34);
 		contentPane.add(pwField);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Login.class.getResource("/Image/login1.png")));
-		lblNewLabel.setBounds(0, 0, 598, 741);
-		contentPane.add(lblNewLabel);
+		JLabel image_label = new JLabel("");
+		image_label.setIcon(new ImageIcon(Login.class.getResource("/Image/login1.png")));
+		image_label.setBounds(0, 0, 598, 741);
+		contentPane.add(image_label);
 	}
 }

@@ -53,7 +53,7 @@ public class Main_Page extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton news_btn = new JButton(""); // 뉴스 버튼
-		news_btn.setBounds(220, 458, 135, 113);
+		news_btn.setBounds(220, 458, 145, 121);
 		contentPane.add(news_btn);
 		
 		news_btn.setBorderPainted(false); // 버튼 테두리 설정
@@ -104,7 +104,7 @@ public class Main_Page extends JFrame {
 			}
 		});
 		
-		memo_btn.setBounds(45, 458, 135, 113);
+		memo_btn.setBounds(45, 458, 145, 121);
 		contentPane.add(memo_btn);
 		
 		JButton btn_game1 = new JButton(""); // 수학 연산 게임 버튼
@@ -126,7 +126,7 @@ public class Main_Page extends JFrame {
 			}
 		});
 		
-		btn_game1.setBounds(55, 589, 135, 113);
+		btn_game1.setBounds(45, 594, 150, 121);
 		contentPane.add(btn_game1);
 		
 		JButton btn_game2 = new JButton(""); // Hangman 게임 버튼
@@ -154,12 +154,12 @@ public class Main_Page extends JFrame {
 			}
 		});
 		
-		btn_game2.setBounds(220, 589, 135, 113);
+		btn_game2.setBounds(215, 594, 150, 121);
 		contentPane.add(btn_game2);
 		
 		welcome_label = new JLabel(""); // "OO님 환영합니다!" 문구를 표시할 Label 
 		welcome_label.setFont(new Font("맑은 고딕", Font.BOLD, 15));
-		welcome_label.setBounds(428, 10, 122, 24);
+		welcome_label.setBounds(464, 10, 122, 24);
 		contentPane.add(welcome_label);
 		
 		JButton btn_chart = new JButton(""); // 게임 점수 합산 버튼
@@ -172,7 +172,7 @@ public class Main_Page extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) { // 게임 점수 합산 버튼 클릭
 				try {
-					ArrayList<GameVO> list = dao.getSumScore(); // 총 점수 합산 결과를 List 형태로 받음
+					ArrayList<GameVO> list = dao.getSumScore(); // 총 점수 합산 결과를 ArrayList 형태로 받음
 					
 					DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 					
@@ -191,9 +191,9 @@ public class Main_Page extends JFrame {
 					
 					chart.getLegend().setItemFont(new Font("맑은 고딕", Font.BOLD, 15)); // 차트 범례 설정
 					
-					plot.getDomainAxis().setLabelFont(new Font("맑은 고딕", Font.BOLD, 15)); // X축 Label 설정
+					plot.getDomainAxis().setLabelFont(new Font("맑은 고딕", Font.BOLD, 15)); // Y축 Label 설정
 					
-					plot.getRangeAxis().setLabelFont(new Font("맑은 고딕", Font.BOLD, 15)); // Y축 Label 설정
+					plot.getRangeAxis().setLabelFont(new Font("맑은 고딕", Font.BOLD, 15)); // X축 Label 설정
 					
 					chart.setBackgroundPaint(Color.WHITE); // 차트 배경색 지정
 					
@@ -210,7 +210,7 @@ public class Main_Page extends JFrame {
 			}
 		});
 		
-		btn_chart.setBounds(390, 594, 135, 108);
+		btn_chart.setBounds(390, 594, 145, 121);
 		contentPane.add(btn_chart);
 		
 		JButton caculator_btn = new JButton(); // 계산기 버튼
@@ -219,7 +219,7 @@ public class Main_Page extends JFrame {
 		caculator_btn.setContentAreaFilled(false); // 버틍 영역 배경 표시 설정
 		caculator_btn.setFocusPainted(false); // 포커스 표시 설정
 		
-		caculator_btn.setBounds(390, 458, 135, 113);
+		caculator_btn.setBounds(390, 458, 145, 121);
 		contentPane.add(caculator_btn);
 		caculator_btn.setIcon(null);
 		
@@ -230,10 +230,10 @@ public class Main_Page extends JFrame {
 		
 		caculator_btn.setBackground(Color.WHITE);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Main_Page.class.getResource("/Image/main.png")));
-		lblNewLabel.setBounds(0, 0, 598, 741);
-		contentPane.add(lblNewLabel);
+		JLabel image_label = new JLabel("");
+		image_label.setIcon(new ImageIcon(Main_Page.class.getResource("/Image/main.png")));
+		image_label.setBounds(0, 0, 598, 741);
+		contentPane.add(image_label);
 		
 		caculator_btn.addMouseListener(new MouseAdapter() {
 			@Override

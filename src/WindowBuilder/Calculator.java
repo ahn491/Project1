@@ -438,10 +438,10 @@ public class Calculator extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Calculator.class.getResource("/Image/logo.png")));
-		lblNewLabel.setBounds(12, 10, 62, 47);
-		contentPane.add(lblNewLabel);
+		JLabel logo_label = new JLabel("");
+		logo_label.setIcon(new ImageIcon(Calculator.class.getResource("/Image/logo.png")));
+		logo_label.setBounds(12, 10, 55, 47);
+		contentPane.add(logo_label);
 		
 		// = 버튼		
 		JButton btResult = new JButton("=");
@@ -582,8 +582,8 @@ public class Calculator extends JFrame {
 	
 	public void playTts(String filename) {
 		File ttsfile = new File(filename);
-		if(mp3Player  !=null) {
-			mp3Player .stop();
+		if(mp3Player != null) {
+			mp3Player.stop();
 		}
 		mp3Player = new MP3Player(ttsfile);
 		mp3Player.play();
@@ -607,7 +607,7 @@ class NumberActionListener implements ActionListener{
 		}else if(curr.contains(".") && text.equals(".")) {
 			
 		} else {
-			txtfield.setText(txtfield.getText()+text);
+			txtfield.setText(txtfield.getText() + text);
 		}
 	} 
 }

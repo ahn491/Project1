@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public class startpage extends JFrame {
 
 	private JPanel contentPane;
-	JLabel lblNewLabel = new JLabel("");
+	JLabel image_label = new JLabel("");
 	Main_Page main = new Main_Page();
 	
 	/**
@@ -35,9 +35,9 @@ public class startpage extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		lblNewLabel.setIcon(new ImageIcon(startpage.class.getResource("/Image/hangman_mainpage.png")));
-		lblNewLabel.setBounds(0, 0, 686, 446);
-		contentPane.add(lblNewLabel);
+		image_label.setIcon(new ImageIcon(startpage.class.getResource("/Image/hangman_mainpage.png")));
+		image_label.setBounds(0, 0, 686, 446);
+		contentPane.add(image_label);
 		
 		JButton btn_start = new JButton(""); // 게임 시작 버튼
 		btn_start.addMouseListener(new MouseAdapter() { // 버튼 클릭 이벤트(게임 창으로 넘어감)
@@ -62,12 +62,12 @@ public class startpage extends JFrame {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) { // 마우스가 버튼 안으로 들어오면 발생하는 이벤트(이미지 변경)
-				lblNewLabel.setIcon(new ImageIcon(startpage.class.getResource("/Image/hangman_start_mouseenter.png")));
+				image_label.setIcon(new ImageIcon(startpage.class.getResource("/Image/hangman_start_mouseenter.png")));
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) { // 마우스가 버튼 밖으로 나가면 발생하는 이벤트(이미지 변경)
-				lblNewLabel.setIcon(new ImageIcon(startpage.class.getResource("/Image/hangman_mainpage.png")));
+				image_label.setIcon(new ImageIcon(startpage.class.getResource("/Image/hangman_mainpage.png")));
 			}
 		});
 		
@@ -92,12 +92,12 @@ public class startpage extends JFrame {
 			
 			@Override
 			public void mouseEntered(MouseEvent e) { // 마우스가 버튼 안으로 들어오면 발생하는 이벤트(이미지 변경)
-				lblNewLabel.setIcon(new ImageIcon(startpage.class.getResource("/Image/hangman_quit_mouseenter.png")));
+				image_label.setIcon(new ImageIcon(startpage.class.getResource("/Image/hangman_quit_mouseenter.png")));
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) { // 마우스가 버튼 밖으로 나가면 발생하는 이벤트(이미지 변경)
-				lblNewLabel.setIcon(new ImageIcon(startpage.class.getResource("/Image/hangman_mainpage.png")));
+				image_label.setIcon(new ImageIcon(startpage.class.getResource("/Image/hangman_mainpage.png")));
 			}
 		});
 		

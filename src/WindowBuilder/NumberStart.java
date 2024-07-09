@@ -63,9 +63,9 @@ public class NumberStart extends JFrame {
 		StartButton.setBounds(310, 372, 177, 60);
 		contentPane.add(StartButton);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(NumberStart.class.getResource("/Image/NumberGame.png")));
-		lblNewLabel.setBounds(0, 0, 610, 757);
-		contentPane.add(lblNewLabel);
+		JLabel image_label = new JLabel("");
+		image_label.setIcon(new ImageIcon(NumberStart.class.getResource("/Image/NumberGame.png")));
+		image_label.setBounds(0, 0, 610, 757);
+		contentPane.add(image_label);
 	}
 }

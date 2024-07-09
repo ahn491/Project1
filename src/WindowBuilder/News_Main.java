@@ -22,6 +22,7 @@ import java.awt.SystemColor;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Component;
 
 public class News_Main extends JFrame { // 뉴스 메인 창
 	
@@ -255,7 +256,7 @@ public class News_Main extends JFrame { // 뉴스 메인 창
 		
 		JLabel disabled_Label = new JLabel("\uC81C\uB3C4 & \uC815\uCC45");
 		disabled_Label.setFont(new Font("맑은 고딕", Font.BOLD, 18));
-		disabled_Label.setBounds(35, 216, 188, 20);
+		disabled_Label.setBounds(35, 216, 175, 20);
 		contentPane.add(disabled_Label);
 		
 		JLabel disabled_img = new JLabel("\uC0AC\uC9C4");
@@ -266,7 +267,7 @@ public class News_Main extends JFrame { // 뉴스 메인 창
 		
 		JLabel economy_Label = new JLabel("\uACBD\uC81C");
 		economy_Label.setFont(new Font("맑은 고딕", Font.BOLD, 18));
-		economy_Label.setBounds(35, 311, 154, 20);
+		economy_Label.setBounds(35, 311, 175, 20);
 		contentPane.add(economy_Label);
 		
 		JLabel economy_img = new JLabel("\uC0AC\uC9C4");
@@ -277,7 +278,7 @@ public class News_Main extends JFrame { // 뉴스 메인 창
 		
 		JLabel social_Label = new JLabel("\uC0AC\uD68C");
 		social_Label.setFont(new Font("맑은 고딕", Font.BOLD, 18));
-		social_Label.setBounds(35, 403, 154, 20);
+		social_Label.setBounds(35, 403, 175, 20);
 		contentPane.add(social_Label);
 		
 		JLabel social_img = new JLabel("\uC0AC\uC9C4");
@@ -288,7 +289,7 @@ public class News_Main extends JFrame { // 뉴스 메인 창
 		
 		JLabel science_Label = new JLabel("IT/\uACFC\uD559");
 		science_Label.setFont(new Font("맑은 고딕", Font.BOLD, 18));
-		science_Label.setBounds(35, 500, 154, 20);
+		science_Label.setBounds(35, 500, 175, 20);
 		contentPane.add(science_Label);
 		
 		JLabel science_img = new JLabel("\uC0AC\uC9C4");
@@ -297,9 +298,10 @@ public class News_Main extends JFrame { // 뉴스 메인 창
 		science_img.setBounds(35, 524, 175, 60);
 		contentPane.add(science_img);
 		
-		JLabel world_Label = new JLabel(" \uC138\uACC4");
-		world_Label.setFont(new Font("굴림", Font.BOLD, 20));
-		world_Label.setBounds(35, 595, 154, 20);
+		JLabel world_Label = new JLabel("세계");
+		world_Label.setAlignmentX(Component.CENTER_ALIGNMENT);
+		world_Label.setFont(new Font("맑은 고딕", Font.BOLD, 18));
+		world_Label.setBounds(35, 590, 175, 20);
 		contentPane.add(world_Label);
 		
 		JLabel world_img = new JLabel("\uC0AC\uC9C4");
