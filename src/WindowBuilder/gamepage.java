@@ -28,6 +28,7 @@ public class gamepage extends JFrame {
 	private JTextField textField_oneletter;
 	private String enteredLetter = ""; // 입력된 글자를 저장할 변수
     private StringBuilder underscores; // 인스턴스 변수로 선언
+    JButton btninputscore;
     Main_Page main = new Main_Page();
 
 	final int life = 10; // 시도할 수 있는 횟수
@@ -172,9 +173,10 @@ public class gamepage extends JFrame {
         btnreplay.setBorder(BorderFactory.createLineBorder(new Color(226, 192, 215), 2));
         panel.add(btnreplay);
         
-        JButton btninputscore = new JButton("");
+        btninputscore = new JButton("");
         
         btninputscore.setContentAreaFilled(false);
+        btninputscore.setVisible(false);
         
         btninputscore.addMouseListener(new MouseAdapter() {
         	@Override
@@ -251,6 +253,7 @@ public class gamepage extends JFrame {
             	lblgameover.setText("GAME OVER");
             	lblsolutionmsg.setText("Answer: " + solution);
                 textField_oneletter.setEditable(false); // 더 이상 입력할 수 없게 함
+                btninputscore.setVisible(true);
             }
         }
 
@@ -263,6 +266,7 @@ public class gamepage extends JFrame {
         if (displayedText.equals(solution)) {
             lblmsg.setText(" YOU WIN ! ");
             textField_oneletter.setEditable(false); // 더 이상 입력할 수 없게 하기 위함
+            btninputscore.setVisible(true);
         }
     }
 	

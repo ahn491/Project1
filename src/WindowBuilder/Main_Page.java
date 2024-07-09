@@ -144,7 +144,13 @@ public class Main_Page extends JFrame {
 				
 				setVisible(false);
 				
-				new startpage(id).setVisible(true); // Hangman 게임 시작 페이지 표시
+				try {
+					new startpage(id).setVisible(true); // Hangman 게임 시작 페이지 표시
+				} catch (ClassNotFoundException e1) {
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		
@@ -181,20 +187,21 @@ public class Main_Page extends JFrame {
 					
 					CategoryPlot plot = chart.getCategoryPlot();
 					
-					chart.getTitle().setFont(new Font("굴림", Font.BOLD, 15));
+					chart.getTitle().setFont(new Font("맑은 고딕", Font.BOLD, 15)); // 차트 제목 설정
 					
-					chart.getLegend().setItemFont(new Font("굴림", Font.BOLD, 15));
+					chart.getLegend().setItemFont(new Font("맑은 고딕", Font.BOLD, 15)); // 차트 범례 설정
 					
-					plot.getDomainAxis().setLabelFont(new Font("굴림", Font.BOLD, 15));
+					plot.getDomainAxis().setLabelFont(new Font("맑은 고딕", Font.BOLD, 15)); // X축 Label 설정
 					
-					plot.getRangeAxis().setLabelFont(new Font("굴림", Font.BOLD, 15));
+					plot.getRangeAxis().setLabelFont(new Font("맑은 고딕", Font.BOLD, 15)); // Y축 Label 설정
 					
-					chart.setBackgroundPaint(Color.WHITE);
+					chart.setBackgroundPaint(Color.WHITE); // 차트 배경색 지정
 					
 					ChartFrame cf = new ChartFrame("게임 점수 합산 결과", chart); // Chart Frame 생성 및 Chart Frame에 차트 추가
 					
 					cf.pack();
 					cf.setSize(800, 500);
+					cf.setLocationRelativeTo(null);
 					cf.setVisible(true); // Chart Frame 표시
 				} catch (SQLException e1) {
 					JOptionPane.showMessageDialog(null, "차트를 생성할 수 없습니다!");

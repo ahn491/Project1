@@ -36,6 +36,7 @@ public class NumberGame extends JFrame {
    int answercnt_1;
    int count = 1;
    JButton nextQuiz;
+   JButton btn_input_score;
    
    Main_Page main = new Main_Page();
 
@@ -102,7 +103,7 @@ public class NumberGame extends JFrame {
       AnswerInputField = new JTextField(); // 정답 입력 TextField
       AnswerInputField.setBorder(null);
       AnswerInputField.setHorizontalAlignment(SwingConstants.CENTER);
-      AnswerInputField.setFont(new Font("굴림", Font.BOLD, 12));
+      AnswerInputField.setFont(new Font("굴림", Font.BOLD, 20));
       AnswerInputField.setBounds(319, 365, 173, 64);
       contentPane.add(AnswerInputField);
       AnswerInputField.setColumns(10);
@@ -149,7 +150,7 @@ public class NumberGame extends JFrame {
       AnswerCnt_1 = new JTextField();
       AnswerCnt_1.setBorder(BorderFactory.createEmptyBorder());
       AnswerCnt_1.setHorizontalAlignment(SwingConstants.CENTER);
-      AnswerCnt_1.setFont(new Font("굴림", Font.BOLD, 16));
+      AnswerCnt_1.setFont(new Font("굴림", Font.BOLD, 20));
       AnswerCnt_1.setBounds(112, 457, 113, 37);
       contentPane.add(AnswerCnt_1);
       AnswerCnt_1.setColumns(10);
@@ -180,7 +181,8 @@ public class NumberGame extends JFrame {
             if(count == 11) {
                JOptionPane.showMessageDialog(null, "10문제 끝~!" + "\n점수는 : " + answercnt_1*10 );
                btn_answer_check.setEnabled(false);
-                  nextQuiz.setEnabled(false);
+               nextQuiz.setEnabled(false);
+               btn_input_score.setVisible(true);
             } else {
                if (operato == '+') {
                   Answer = num1 + num2;
@@ -202,13 +204,14 @@ public class NumberGame extends JFrame {
       nextQuiz.setBounds(449, 439, 68, 66);
       contentPane.add(nextQuiz);
       
-      JButton btn_input_score = new JButton("Update");
+      btn_input_score = new JButton("Update");
       btn_input_score.setForeground(new Color(207, 182, 92));
       btn_input_score.setFont(new Font("Arial", Font.BOLD, 30));
       
       btn_input_score.setBorderPainted(false); 
       btn_input_score.setContentAreaFilled(false); 
       btn_input_score.setFocusPainted(false);
+      btn_input_score.setVisible(false);
       
          btn_input_score.addMouseListener(new MouseAdapter() {
             @Override

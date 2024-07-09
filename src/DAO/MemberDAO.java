@@ -4,23 +4,21 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import DBConnect.DBConnection;
-import VO.MemberVO;
 
 public class MemberDAO { // DB Query 수행 Class
 	Connection con;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
+	String id1;
+	String pw1;
 		
 	public MemberDAO() throws ClassNotFoundException, SQLException {
 		con = new DBConnection().getConnection();
 	}
 	
-	public ArrayList<MemberVO> login(String id, String pw) throws SQLException { // 로그인
-		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
-		
+	public String login_id(String id, String pw) throws SQLException { // 로그인 ID
 		String sql = "SELECT * FROM member WHERE id = ? AND pw = ?";
 		
 		try {
@@ -32,18 +30,36 @@ public class MemberDAO { // DB Query 수행 Class
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				String id1 = rs.getString("id");
-				String pw1 = rs.getString("pw");
-				
-				MemberVO vo = new MemberVO(id1, pw1);
-				
-				list.add(vo);
+				id1 = rs.getString("id");
 			}
 		} catch(SQLException e) {
 			System.out.println("Login Error!");
 		}
 		
-		return list;
+		System.out.println(id1);
+		
+		return id1;
+	}
+	
+	public String login_pw(String id, String pw) throws SQLException { // 로그인 Password
+		String sql = "SELECT * FROM member WHERE id = ? AND pw = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				pw1 = rs.getString("pw");
+			}
+		} catch(SQLException e) {
+			System.out.println("Login Error!");
+		}
+		
+		return pw1;
 	}
 	
 	public boolean register(String id, String pw, String name, String age, String gender, String tel, String address) { // 회원가입
