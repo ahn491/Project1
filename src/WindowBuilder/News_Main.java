@@ -70,7 +70,7 @@ public class News_Main extends JFrame { // 뉴스 메인 창
 	    JLabel title_label = new JLabel("\uC8FC\uC694\uB274\uC2A4 |  \uC81C\uB3C4 & \uC815\uCC45 | \uACBD\uC81C | \uC0AC\uD68C | IT/\uACFC\uD559 | \uC138\uACC4"); // 제목 Label
 	    title_label.setBackground(Color.WHITE);
 	    
-	    title_label.setOpaque(true); 
+	    title_label.setOpaque(true);
 	    
 	    title_label.setIcon(null);
 	    title_label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -80,10 +80,11 @@ public class News_Main extends JFrame { // 뉴스 메인 창
 	    contentPane.add(title_label);
 	    
 	    dateField = new JTextField(); // 오늘 날짜 표시 Field
+	    dateField.setBackground(new Color(255, 255, 255));
 	    
 	    dateField.setEditable(false);
 	    dateField.setBorder(BorderFactory.createEmptyBorder());
-	    dateField.setFont(new Font("굴림", Font.BOLD, 18));
+	    dateField.setFont(new Font("맑은 고딕", Font.BOLD, 18));
 	    dateField.setBounds(497, 9, 89, 28);
 	    contentPane.add(dateField);
 	    

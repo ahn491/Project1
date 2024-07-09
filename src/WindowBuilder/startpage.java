@@ -34,6 +34,9 @@ public class startpage extends JFrame {
 		contentPane.setLayout(null);
 		
 			JButton btn_start = new JButton("게임 시작");
+			btn_start.setFocusPainted(false);
+			btn_start.setBorder(null);
+			btn_start.setBorderPainted(false);
 			btn_start.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
@@ -58,7 +61,7 @@ public class startpage extends JFrame {
 			});
 			
 			btn_start.setIcon(new ImageIcon(startpage.class.getResource("/Image/start.png")));
-			btn_start.setBounds(69, 190, 102, 30);
+			btn_start.setBounds(96, 190, 102, 30);
 			contentPane.add(btn_start);
 		
 		JLabel lblNewLabel = new JLabel("");

@@ -60,9 +60,10 @@ public class NumberGame extends JFrame {
       contentPane.setLayout(null);
       
       JLabel lblNewLabel_1 = new JLabel("정답 갯수");
-      lblNewLabel_1.setFont(new Font("맑은 고딕", Font.BOLD, 12));
+      lblNewLabel_1.setForeground(new Color(255, 255, 255));
+      lblNewLabel_1.setFont(new Font("맑은 고딕", Font.BOLD, 18));
       lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-      lblNewLabel_1.setBounds(124, 428, 81, 19);
+      lblNewLabel_1.setBounds(112, 420, 113, 27);
       contentPane.add(lblNewLabel_1);
       
       JLabel QuizRandomLabel = new JLabel("QuizLabel"); // 연산 문제가 표시되는 Label

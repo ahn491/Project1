@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import DAO.MemberDAO;
+import VO.MemberVO;
 
 import java.awt.Color;
 import javax.swing.JButton;
@@ -21,6 +22,7 @@ import javax.swing.JTextField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.swing.JPasswordField;
 
@@ -93,19 +95,23 @@ public class Login extends JFrame {
 					setVisible(true);
 				} else {
 					try {
-						if(id.equals(dao.login(id, pw))) { // DB에서 가져온 ID 값과 입력한 ID 값이 일치하는지 확인
-							JOptionPane.showMessageDialog(null, "로그인 성공!");
-							
-							dispose();
+						ArrayList<MemberVO> list = dao.login(id, pw);
+						
+						for(MemberVO vo : list) {
+							if(id.equals(vo.getId()) && pw.equals(vo.getPw())) { // DB에서 가져온 ID, PW 값과 입력한 ID, PW 값이 일치하는지 확인
+								JOptionPane.showMessageDialog(null, "로그인 성공!");
 								
-							setVisible(false);
-							
-							main = new Main_Page();
-							main.setVisible(true); // 메인 페이지 표시
-							main.welcome_label.setText(id + "님 환영합니다!");	
-							main.str = id;
-						} else {
-							JOptionPane.showMessageDialog(null, "로그인 실패!");
+								dispose();
+									
+								setVisible(false);
+								
+								main = new Main_Page();
+								main.setVisible(true); // 메인 페이지 표시
+								main.welcome_label.setText(id + "님 환영합니다!");	
+								main.str = id;
+							} else {
+								JOptionPane.showMessageDialog(null, "로그인 실패!");
+							}
 						}
 					} catch (Exception e1) {
 						JOptionPane.showMessageDialog(null, "로그인 오류!");

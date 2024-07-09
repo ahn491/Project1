@@ -7,20 +7,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import DBConnect.DBConnection;
+import VO.MemberVO;
 
 public class MemberDAO { // DB Query 수행 Class
 	Connection con;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
-	
-	boolean result1;
-	int result2;
-	
+		
 	public MemberDAO() throws ClassNotFoundException, SQLException {
 		con = new DBConnection().getConnection();
 	}
 	
-	public String login(String id, String pw) throws SQLException { // 로그인
+	public ArrayList<MemberVO> login(String id, String pw) throws SQLException { // 로그인
+		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
+		
 		String sql = "SELECT * FROM member WHERE id = ? AND pw = ?";
 		
 		try {
@@ -32,22 +32,18 @@ public class MemberDAO { // DB Query 수행 Class
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				if(id.equals(rs.getString("id")) && pw.equals(rs.getString("pw"))) {
-					System.out.println("로그인 성공!");
-					
-					result1 = true;
-				} else {
-					System.out.println("로그인 실패!");
-					
-					result1 = false;
-				}
+				String id1 = rs.getString("id");
+				String pw1 = rs.getString("pw");
+				
+				MemberVO vo = new MemberVO(id1, pw1);
+				
+				list.add(vo);
 			}
 		} catch(SQLException e) {
 			System.out.println("Login Error!");
 		}
-		String id1 = rs.getString("id");
 		
-		return id1;
+		return list;
 	}
 	
 	public boolean register(String id, String pw, String name, String age, String gender, String tel, String address) { // 회원가입
