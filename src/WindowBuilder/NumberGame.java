@@ -213,14 +213,14 @@ public class NumberGame extends JFrame {
       btn_input_score.setFocusPainted(false);
       btn_input_score.setVisible(false);
       
-         btn_input_score.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-               int score = answercnt_1 * 10;
-               String id1 = id;
+      btn_input_score.addMouseListener(new MouseAdapter() {
+    	  @Override
+          public void mouseClicked(MouseEvent e) {
+    		  int score = answercnt_1 * 10;
+              String id1 = id;
                
-               if(dao.insert_score1(id1, score)) {
-                  JOptionPane.showMessageDialog(null, "Update 완료!");
+              if(dao.insert_score1(id1, score)) {
+            	  JOptionPane.showMessageDialog(null, "Update 완료!");
                   
                   main.welcome_label.setText(id1 + "님 환영합니다!");
                   
@@ -231,16 +231,16 @@ public class NumberGame extends JFrame {
                   setVisible(false);
                   
                   main.setVisible(true);
-               }
-            }
-         });
+              }
+    	  }
+      });
          
-         btn_input_score.setBounds(383, 533, 150, 46);
-         contentPane.add(btn_input_score);
+      btn_input_score.setBounds(383, 533, 150, 46);
+      contentPane.add(btn_input_score);
          
-         JLabel image_label = new JLabel("");
-         image_label.setIcon(new ImageIcon(NumberGame.class.getResource("/Image/NumberGame1.png")));
-         image_label.setBounds(0, 0, 614, 746);
-         contentPane.add(image_label);
-      }
+      JLabel image_label = new JLabel("");
+      image_label.setIcon(new ImageIcon(NumberGame.class.getResource("/Image/NumberGame1.png")));
+      image_label.setBounds(0, 0, 614, 746);
+      contentPane.add(image_label);
    }
+}

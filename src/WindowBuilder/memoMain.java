@@ -245,6 +245,7 @@ public class memoMain extends JFrame {
 	        if (!currentFile.getName().toLowerCase().endsWith(".txt")) {
 	            currentFile = new File(currentFile.getParentFile(), currentFile.getName() + ".txt");
 	        }
+	        
 	        saveFile();
 	    }
 	}

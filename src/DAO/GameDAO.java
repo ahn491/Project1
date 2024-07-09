@@ -18,7 +18,7 @@ public class GameDAO {
 		con = new DBConnection().getConnection();
 	}
 	
-	public boolean insert_score1(String id, int score) { // 문제 풀이 게임 점수 추가
+	public boolean insert_score1(String id, int score) { // Math Quiz 게임 점수 추가
 		String sql = "INSERT INTO member_score(id, score1) VALUES(?, ?)";
 		
 		try {
