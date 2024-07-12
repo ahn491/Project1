@@ -582,18 +582,20 @@ public class Calculator extends JFrame {
 	
 	public void playTts(String filename) {
 		File ttsfile = new File(filename);
+		
 		if(mp3Player != null) {
 			mp3Player.stop();
 		}
+		
 		mp3Player = new MP3Player(ttsfile);
 		mp3Player.play();
 	}
 }
 
-class NumberActionListener implements ActionListener{
-	
+class NumberActionListener implements ActionListener {
 	private String text;
 	private JTextField txtfield;
+	
 	public NumberActionListener(JTextField txt, String s) {
 		txtfield = txt;
 		text = s;
@@ -602,10 +604,9 @@ class NumberActionListener implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String curr = txtfield.getText();
+		
 		if(curr.equals("0")  && !text.equals(".") ) {
 			txtfield.setText(text);
-		}else if(curr.contains(".") && text.equals(".")) {
-			
 		} else {
 			txtfield.setText(txtfield.getText() + text);
 		}

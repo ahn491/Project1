@@ -149,7 +149,7 @@ public class Login extends JFrame {
 		register_btn.setBounds(323, 626, 99, 43);
 		contentPane.add(register_btn);
 		
-		pwField = new JPasswordField(); // Password 입력 Field
+		pwField = new JPasswordField(); // Password 입력 Field(비밀번호를 보이지 않도록 하기 위해 PasswordField를 사용)
 		pwField.setOpaque(false);
 		pwField.setFont(new Font("굴림", Font.PLAIN, 20));
 		pwField.setBorder(BorderFactory.createEmptyBorder());

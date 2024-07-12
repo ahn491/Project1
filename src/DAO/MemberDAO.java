@@ -8,15 +8,15 @@ import java.sql.SQLException;
 import DBConnect.DBConnection;
 
 public class MemberDAO { // DB Query 수행 Class
-	public MemberDAO() throws ClassNotFoundException, SQLException {
-		con = new DBConnection().getConnection();
-	}
-	
 	Connection con;
 	PreparedStatement pstmt;
 	ResultSet rs;
 	String id1;
 	String pw1;
+	
+	public MemberDAO() throws ClassNotFoundException, SQLException {
+		con = new DBConnection().getConnection();
+	}
 		
 	public String login_id(String id, String pw) throws SQLException { // 로그인 ID
 		String sql = "SELECT * FROM member WHERE id = ? AND pw = ?";

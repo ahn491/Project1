@@ -186,10 +186,10 @@ public class Main_Page extends JFrame {
 						dataset.addValue(game.getSum(), "평균 점수", game.getId()); // 차트 요소 설정(값, 범례, 항목)
 					}
 					
-					PlotOrientation po = PlotOrientation.HORIZONTAL; // 차트 방향(HORIZONTAL : 가로축과 세로축을 그대로 유지, VERTICAL : 가로축과 세로축 변환)
+					PlotOrientation po = PlotOrientation.HORIZONTAL; // 차트 방향(HORIZONTAL : 가로 축과 세로 축을 그대로 유지, VERTICAL : 가로 축과 세로 축 변환)
 					
 					// 차트 생성(3D 막대형 차트 - 제목, 가로축 제목, 세로축 제목, 차트 요소, 차트 방향, ...)
-					JFreeChart chart = ChartFactory.createBarChart3D("게임점수 순위", "", "", dataset, po, true,true,true);
+					JFreeChart chart = ChartFactory.createBarChart3D("게임 점수 순위", "", "", dataset, po, true, true, true);
 					
 					CategoryPlot plot = chart.getCategoryPlot();
 
@@ -262,7 +262,7 @@ public class Main_Page extends JFrame {
 					
 					chart.setBackgroundPaint(Color.decode("#F1EBDE")); // 차트 배경색 지정
 					
-					ChartFrame cf = new ChartFrame("게임 점수 합산 결과", chart); // Chart Frame 생성 및 Chart Frame에 차트 추가
+					ChartFrame cf = new ChartFrame("게임 점수 순위", chart); // Chart Frame 생성 및 Chart Frame에 차트 추가
 					
 					cf.pack();
 					cf.setSize(800, 500);
@@ -288,7 +288,7 @@ public class Main_Page extends JFrame {
 		contentPane.add(caculator_btn);
 		caculator_btn.setIcon(null);
 		
-		caculator_btn.setHorizontalAlignment(SwingConstants.LEFT); // 수평 정렬: 왼쪽
+		caculator_btn.setHorizontalAlignment(SwingConstants.LEFT); // 수평 정렬 : 왼쪽
 		caculator_btn.setVerticalAlignment(SwingConstants.TOP);
 		
 		caculator_btn.setBorder(new EmptyBorder(15, 15, 0, 0));
